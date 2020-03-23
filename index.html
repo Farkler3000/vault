@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<title>Vault Website</title>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Info {background-color: blue;}
+#About {background-color: orange;}
+#Factions {background-color:red}
+
+.txt {
+  width:60%;
+  line-height:25px;
+}
+</style>
+</head>
+<body translate="no">
+<div>
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('News', this, 'green')">News</button>
+<button class="tablink" id='defaultOpen' onclick="openPage('Info', this, 'blue')">Info</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+<button class='tablink' onclick="openPage('Factions',this,'red')">Factions</button>
+<div id="Home" class="tabcontent">
+<h2>What it is:</h2>
+<p></p>
+</div>
+<div id="News" class="tabcontent">
+<h2>Currently Working On:</h2>
+<p>Finishing the vault</p>
+<h2>Roadmap for Updates</h2>
+<p class='txt'>No Updates Currently Planned.</p>
+</div>
+<div id="Info" class="tabcontent">
+<h2>Crafting & Modding</h2>
+<p class='txt'>The vault has a fully functional crafting system that doesn't use crafting tables. To use it, simply put in the 2 components for a recipe and take out the crafted item. Some recipes will be unlocked by default, while others can be found through quests or other methods. In total there are 30 crafting recipes for armor, weapons, and miscellaneous items. The modding system is used for weapons and armor with the moddable tag. These items can be combined with other components to upgrade them in the modding machine. These items have 3 tiers, their base form, tier 1 and tier 2. Tier 2 items are very hard to get, but are better than most other weapons and armor in the game.</p>
+<br />
+<h2>Components</h2>
+<p>There are a number of components used for crafting and modding in the vault. Components can be found by scavenging in the wasteland or recycling junk. Components include springs, circuitry, aluminum, etc.</p>
+</div>
+<div id="About" class="tabcontent">
+<h2>About</h2>
+<p>The vault is a project made by TriNyte, Farkler_, DahabTheCreator, and Sandy. It is a fully functional fallout vault inspired by Fallout 4. This vault is the second one made in the project, with the first one mostly being made by TriNyte and Farkler_. TriNyte is the lead on the project, but all members have a lot of say.</p>
+</div>
+<div id='Factions' class='tabcontent'>
+<h2>The 4 Main Factions</h2>
+<p>The vault has 4 main factions with different ideals and territories. There are also some smaller factions but they aren't as powerful. The factions are:</p>
+<ul>
+<li>Institute: <p>The institute is a powerful faction full of scientists who created Synths, a robot that is very similar to humans. The institute uses these synths to study humans to try to keep the human race alive.</p>
+</li>
+</ul>
+</div>
+</div>
+<script id="rendered-js">
+function openPage(pageName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+  document.body.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>
